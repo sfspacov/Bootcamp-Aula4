@@ -7,10 +7,29 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            var resultado =  AnonymousType();
-            GenericTypeExemplo1();
-            GenericTypeExemplo2();
+            //get
+            var arrayDeInts = new[] { 1, 2, 3, 4 };
             
+            //get; set;
+            var listaDeInts = new List<int>() { 1, 2, 19, 4 };
+            listaDeInts.Add(5);
+            listaDeInts.Remove(3);
+            listaDeInts.RemoveAt(2);
+            listaDeInts.RemoveAll(x => x > 2);
+
+            Queue<int> FilaDeInts;
+
+
+            Stack<int> PilhaDeInts;
+
+
+            //var resultado =  AnonymousType();
+            //GenericTypeExemplo1();
+            //GenericTypeExemplo2();
+            //ImplicitTypeConvertion();
+
+            //São value types
+            NullableTypes();
         }
 
         static void RecebeAnonimo(dynamic tipoAnonimo)
@@ -25,10 +44,10 @@ namespace ConsoleApp2
         {
             var tipoAnonimo = new
             {
-                Nome = "João", 
-                Mensagem = "Oi, bom dia", 
+                Nome = "João",
+                Mensagem = "Oi, bom dia",
                 Idade = 32,
-                Filhos = new List<string>(){"Maria", "Roberto"}
+                Filhos = new List<string>() { "Maria", "Roberto" }
             };
 
             return tipoAnonimo;
@@ -63,6 +82,16 @@ namespace ConsoleApp2
             bancoDeDados2.Salvar(usuario1);
         }
 
-        
+        static void ImplicitTypeConvertion()
+        {
+            var x = "a";
+            var y = 'a';
+        }
+
+        static void NullableTypes()
+        {
+            int nonNullable = 0;
+            int? nullable = null;
+        }
     }
 }
